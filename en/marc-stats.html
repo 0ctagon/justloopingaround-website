@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta property="og:title" content="Marc Tierlist">
+    <meta property="og:description" content="All the songs created by Marc Rebillet on one website.">
+    <meta property="og:image" content="https://0ctgn.cc/img/og.png">
+    <meta property="og:url" content="https://0ctgn.cc/en/marc-stats.html">
+    <meta property="og:type" content="website">
+    <title>
+        Marc Tierlist Statistics
+    </title>
+    <link rel="icon" href="../img/MARCsans.png">
+    <link rel="stylesheet" href="../robe.css">
+    <script src="../menu.js" defer></script>
+    <script src="stats.js" defer></script>
+</head>
+    <div class="top-banner-stats" id="top"></div>
+    <div class="top-section">
+        <div class="top-header">
+            <h1>Marc Rebillet Live Stream Statistics</h1>
+            <p>Small analysis of the whole dataset with interesting stats and study of my own biases.</p>
+        </div>
+        <div class="menu-icon" onclick="toggleMenu()">
+            <img src="../svg/menu.svg" alt="Menu Icon" class="menu-img"></img>
+            <span class="menu-text">MENU</span>
+            <div class="dropdown-menu" id="dropdownMenu">
+                <button onclick="window.location.href = 'marc-tierlist.html'">
+                    <img src="../svg/EN.svg" alt="Menu Icon" class="menu-img">
+                    To Tierlist
+                </button>
+                <button onclick="window.location.href = '../marc-tierlist.html'">
+                    <img src="../svg/FR.svg" alt="Menu Icon" class="menu-img">
+                    Vers Tierlist
+                </button>
+                <div class="dropdown-divider"></div>
+                <button onclick="window.location.href='changelog.html'">
+                    <img src="../svg/changelog.svg" alt="changelog page" class="menu-img">
+                    Changelog
+                </button>
+                <button onclick="window.location.href='marc-notierlist.html'">
+                    <img src="../svg/notierlist.svg" alt="notierlist page" class="menu-img">
+                    To no-tierlist
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div id="main">
+        <div class="section">
+            <h2>Global overview</h2>
+            <div class="paragraphe">
+                <p>Number of Live Streams done: <b>133 streams</b></p>
+                <p>Total music ranked: <b>1233 songs</b></p>
+                <p>Total music length ranked: <b>6 days, 23:58:07</b></p>
+                <p>Average song length: <b>0:08:10</b></p>
+                <p>Average number of songs per stream: <b>9.27 songs</b></p>
+                <p>Average music time per streams: <b>1:15:46</b></p>
+                <p>Longest music time for a stream: <b>2:38:10, ONE MILLION SUBS LIVE STREAM</b></p>
+                <p>Longest song: <b>0:50:00, Taste like candy</b></p>
+                <p>Highest number of songs for a stream: <b>26 songs, 20K SUBSCRIBERS LIVE PERFORMANCE Stream</b></p>
+                <p>Date when first stream ranked and pushed on the website: <b>24th October 2020</b></p>
+            </div>
+        </div>
+        <div class="section">
+            <h2>Advanced Statistics and Analysis</h2>
+            <div class="paragraphe">
+                <p>Overview of the songs and streams properties over time. To make the following plots in this section, interludes and cut streams (live with songs with the (cut) tag) have been removed, which leads to some differences compared to the stats shown before and above.</p>
+            </div>
+            <div class="paragraphe">
+                <h3>Rank study</h3>
+
+                <div>
+                    <button onclick="toggleFigure('rankNsong')" id="rankNsongButton" class="fig-btn">Show Fig. 1: Songs rank distribution</button>
+                    <button onclick="toggleFigure('rankPercSongMedia')" id="rankPercSongMediaButton" class="fig-btn">Show Fig. 2: Songs rank distribution by stream type</button>
+                    <button onclick="toggleFigure('rankSongLengthMedia')" id="rankSongLengthMediaButton" class="fig-btn">Show Fig. 3: Songs length distribution by stream type</button>
+                </div>
+
+                <div class="figures">
+                    <figure id="rankNsong" class="figure">
+                        <img src="../img/stats/rank_nsong.png" alt="Songs rank distribution">
+                        <figcaption>Fig. 1: Songs rank distribution.</figcaption>
+                    </figure>
+                    <figure id="rankPercSongMedia" class="figure">
+                        <img src="../img/stats/rank_nsong_streamtype.png" alt="Songs rank distribution by stream type">
+                        <figcaption>Fig. 2: Songs rank distribution by stream type.</figcaption>
+                    </figure>
+                    <figure id="rankSongLengthMedia" class="figure">
+                        <img src="../img/stats/rank_length_streamtype.png" alt="Songs length distribution by stream type">
+                        <figcaption>Fig. 3: Songs length distribution by stream type.</figcaption>
+                    </figure>
+                </div>
+
+                <p>Figure 1 shows the distribution of the song ranking. We can see that the vast majority of songs are B+, followed by B tier. This is due to the fact that Marc's songs are great on average. The third and fourth positions are A and S tier. The songs that are ranked A+ tend to end up in S-tier after a while, which explains the lower number of A+ compared to A and S tier. Finally, the C+, C and D tiers are under-represented, which is also evidence of the overall high quality of the songs (or the fact that I really like his stuff).</p>
+                <p>A more detailed distribution of the ranks for each stream type is shown in Figure 2. The percentage shown is the number of songs with rank X for a stream type divided by the total number of songs for that stream type. The public live streams tend to have more B+ songs. This could be due to the fact that the song lengths in public streams tend to be shorter and less developed (see Fig.3), with better entertainment for the audience. When ranking public livestream, I tend to think that if you're in the crowd, every song played are minimum A tier, but I try to rank them without having this bias. Twitch streams have a higher percentage of high ranked songs, because Twitch streams tend to have longer and more developed songs (which I prefer).</p>
+                <p>Figure 3 confirms this hypothesis. It shows the length of songs as a function of rank and stream type. We observe that YouTube and Twitch streams have a much higher song length on average compared to public streams. We can also see a clear correlation with the rank and the song length: <b>higher ranked songs tend to be longer</b>.</p>
+            </div>
+            <div class="paragraphe">
+                <h3>Evolution of my ranking over time</h3>
+
+                <div>
+                    <button onclick="toggleFigure('rankAS')" id="rankASButton" class="fig-btn">Show Fig. 4: S/A+/A ranking plot</button>
+                    <button onclick="toggleFigure('rankB')" id="rankBButton" class="fig-btn">Show Fig. 5: B/B+ ranking plot</button>
+                    <button onclick="toggleFigure('rankCD')" id="rankCDButton" class="fig-btn">Show Fig. 6: C/C+/D ranking plot</button>
+                </div>
+
+                <div class="figures">
+                    <figure id="rankAS" class="figure">
+                        <img src="../img/stats/rank_heatmap_high.png" alt="Percentage of S, A+ and A for each stream">
+                        <figcaption>Fig. 4: Percentage of S, A+ and A for each stream as a function of the live date (x axis) and the date I ranked the live (y axis).</figcaption>
+                    </figure>
+                    <figure id="rankB" class="figure">
+                        <img src="../img/stats/rank_heatmap_mid.png" alt="Percentage of B+ and B for each stream">
+                        <figcaption>Fig. 5: Percentage of B+ and B for each stream as a function of the live date (x axis) and the date I ranked the live (y axis).</figcaption>
+                    </figure>
+                    <figure id="rankCD" class="figure">
+                        <img src="../img/stats/rank_heatmap_low.png" alt="Percentage of C+, C and D for each stream">
+                        <figcaption>Fig. 6: Percentage of C+, C and D for each stream as a function of the live date (x axis) and the date I ranked the live (y axis).</figcaption>
+                    </figure>
+                </div>
+
+                <p>In order to see how the ranking of the songs evolved over time, we can count the number of each rank as a function of the stream date and the date when I ranked them. Figure 4, 5 and 6 show the percentage of [S, A+, A], [B+, B] and [C+, C, D] as a function of those two variables.</p>
+                <p>In Figure 4, we can see that the percentage of [S, A+, A] tier songs increase over time. If a stream is recent, it has a higher probability to have [S, A+, A] songs. In addition, this percentage doesn't really change compared to when I started ranking the streams. <br>In Figure 5, we observe a great increase of the [B+, B] songs for recently ranked streams. This trend can also be seen in Fig. 6, where [C+, C, D] nearly disappeared with recently ranked streams.</p>
+                <p>Two hypotheses can be formulated: either <b>Marc song quality increased over time</b>, or <b>I have become more lenient in ranking</b>, but I think it's a combination of <b>both</b>.</p>
+            </div>
+            <div class="paragraphe">
+                <h3>Evolution of stream properties over time</h3>
+
+                <div>
+                    <button onclick="toggleFigure('meanStreamLength')" id="meanStreamLengthButton" class="fig-btn">Show Fig. 7: Mean stream length</button>
+                    <button onclick="toggleFigure('meanSongLength')" id="meanSongLengthButton" class="fig-btn">Show Fig. 8: Mean songs length</button>
+                    <button onclick="toggleFigure('meanSongNumber')" id="meanSongNumberButton" class="fig-btn">Show Fig. 9: Mean songs number</button>
+                    <button onclick="toggleFigure('streamTypeMonth')" id="streamTypeMonthButton" class="fig-btn">Show Fig. 10: Stream types per month</button>
+                </div>
+
+                <div class="figures">
+                    <figure id="meanStreamLength" class="figure">
+                        <img src="../img/stats/live_stream_length.png" alt="Mean stream length per month">
+                        <figcaption>Fig. 7: Mean stream length per month.</figcaption>
+                    </figure>
+                    <figure id="meanSongLength" class="figure">
+                        <img src="../img/stats/live_song_length.png" alt="Mean songs length per stream">
+                        <figcaption>Fig. 8: Mean songs length per stream for each month.</figcaption>
+                    </figure>
+                    <figure id="meanSongNumber" class="figure">
+                        <img src="../img/stats/live_song_number.png" alt="Mean songs number per stream">
+                        <figcaption>Fig. 9: Mean number of song per stream for each month.</figcaption>
+                    </figure>
+                    <figure id="streamTypeMonth" class="figure">
+                        <img src="../img/stats/nstreams_stacked_bar_plot.png" alt="Stream types per month">
+                        <figcaption>Fig. 10: Stacked plot of the number of each stream types for each month.</figcaption>
+                    </figure>
+                </div>
+
+                <p>The streams have an average of 1 hour and 16 minutes of pure music. Figure 7 shows the mean stream length per month. Before covid, the music length per streams was around 50 min, less than the average, as a lot of time was dedicated to callers. We can also see the live streams at Braindead early 2018, with a higher music length per stream. Then covid hit, the stream length increased along with the time to make music.</p>
+                <p>Typically, the average duration of songs in streams is around 8 minutes and 10 seconds. In Fig. 8, we can see the evolution of the songs length over time, which increases over time, with a peak around min 2020 until mid-2021, during covid time.</p>
+                <p>For the number of songs produced per stream, the average is around 9.3 songs. We observe in Fig. 9 a peak in Spring-Summer 2018, which corresponds to live streams at Braindead, where the average song lengths were around 4 min while still streaming for 2h long (see Fig. 7 and Fig. 10). Otherwise, this average stays constant over time with a slight decrease toward the end, maybe caused by a higher time dedicated to develop the songs, and a small increase starting with the We outside serie.</p>
+                <p>Figure 10 shows the different streams and their types over the months. We can see the transition from the Braindead streams to the Covid-era, back to having a crowd with We outside.</p>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+    <pcontact>Marc Rebillet TierList | 2020 - 2025 | Contact: @0ctgn on ig</pcontact>
+</html>
