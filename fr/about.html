@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta property="og:title" content="JustLoopingAround">
+    <meta property="og:description" content="Repertoire of songs created by Marc Rebillet during live streams.">
+    <meta property="og:image" content="https://justloopingaround.com/img/og.png">
+    <meta property="og:url" content="https://justloopingaround.com/fr/about">
+    <meta property="og:type" content="website">
+    <title>
+        À propos - JustLoopingAround
+    </title>
+    <link rel="icon" href="../img/MARCsans.png">
+    <link rel="stylesheet" href="../css/robe.css">
+    <script>
+        window.myConfig = {
+            tierlist: false,
+            language: 'en',
+        };
+    </script>
+    <script src="../js/pedal.js" defer></script>
+    <script src="../js/menu.js" defer></script>
+</head>
+<div class="top-banner" id="top"></div>
+<div class="top-section">
+    <div class="top-header">
+        <h1>À propos</h1>
+    </div>
+    <div id="menuAnchor">
+        <div class="menu-icon" onclick="toggleMenu()">
+            <img src="../svg/menu.svg" alt="Menu Icon" class="menu-img"></img>
+            <span class="menu-text">MENU</span>
+            <div class="dropdown-menu" id="dropdownMenu">
+                <button onclick="window.location.href='.'">
+                    <img src="../svg/notierlist.svg" alt="To Repertoire" class="menu-img">
+                    Vers Repertoire
+                </button>
+                <button onclick="window.location.href = 'tierlist'">
+                    <img src="../svg/cup.svg" alt="To Tierlist" class="menu-img">
+                    Vers Tierlist
+                </button>
+                <div class="dropdown-divider"></div>
+                <button onclick="window.location.href = '../'">
+                    <img src="../svg/EN.svg" alt="english website" class="menu-img">
+                    EN
+                </button>
+                <button onclick="window.location.href='../statistics'">
+                    <img src="../svg/stats.svg" alt="statistic page" class="menu-img">
+                    Statistics
+                </button>
+                <button onclick="window.location.href='../changelog'">
+                    <img src="../svg/changelog.svg" alt="changelog page" class="menu-img">
+                    Changelog
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="main">
+    <div class="section">
+        <div id="project">
+            <h2 id="project">Le projet</h2>
+            <div class="paragraphe">
+                <p>
+                    Il s'agit d'un site web créé par un fan qui répertorie toutes les chansons créées par Marc Rebillet lors de ses streams. Ce site n'est pas affilié à Marc Rebillet (bien qu'il l'ait vu et exprimé sa gratitude sur la publication du <a href="https://www.facebook.com/share/g/1ZPpoKxKh7/?mibextid=wwXIfr" class="custom-link">groupe Facebook Marc Rebillet alias Loop Daddy</a> et sur la publication épinglée de son <a href="https://www.reddit.com/r/loopdaddy/" class="custom-link">subreddit</a>). Le site ne repertorie que les streams disponibles sur la chaine officielle de Marc Rebillet, et ne contient (pour l'instant) pas de chansons d'autres sources.
+                </p>
+            </div>
+        </div>
+        <div id="history">
+            <h2>L'histoire</h2>
+            <div class="paragraphe">
+                <p>
+                    Je me baladais tranquillement sur reddit lorsque je tombe sur une publication montant <a href="https://www.youtube.com/watch?v=NLkbqWSY6Bg" class="custom-link">cette vidéo</a>. Intrigué par cette masterclass, j'explore un peu plus cette nouvelle chaine youtube. Il m'a suffit de quelques <a href="https://www.youtube.com/watch?v=Y-UmoQlqp_0" class="idealogues-0">i</a><a href="https://www.youtube.com/watch?v=_g5NDLKy0NI" class="idealogues-1">d</a><a href="https://www.youtube.com/watch?v=omab6QAwBCA" class="idealogues-2">e</a><a href="https://www.youtube.com/watch?v=sRpUr5iQPIY" class="idealogues-3">a</a><a href="https://www.youtube.com/watch?v=ivH_Ft8wqmM" class="idealogues-4">l</a><a href="https://www.youtube.com/watch?v=IrXQ4OXmQok" class="idealogues-5">o</a><a href="https://www.youtube.com/watch?v=XtRR_q8Vh_A" class="idealogues-6">g</a><a href="https://www.youtube.com/watch?v=JBoDWL_bayc" class="idealogues-7">u</a><a href="https://www.youtube.com/watch?v=LZmtl3l1R9A" class="idealogues-8">e</a><a href="https://www.youtube.com/watch?v=WeKDDP0Fv0E" class="idealogues-9">s</a> pour comprendre à quel point je résonnais avec ce qu'il se passait sous mes yeux et dans mes oreilles.
+                </p>
+                <p>
+                    Après un certain temps, je me mets à écouter ses différents streams de l'époque. Je deviens fan de quelques chansons, et j'en ajoute certaines en favoris pour pas les perdre et pouvoir les réecouter.
+                </p>
+                <p>
+                    De plus en plus de streams sont publiés, de plus en plus de chansons sont incroyables, je commence à connaitre par coeur les noms des streams et à quelle minute commencent les chansons que j'apprécie.
+                </p>
+                <p>
+                    Une inquiétude se crée: suis-je en train de louper des masterclasses ? Comme j'écoute tout le temps les mêmes passages des streams, j'oublie progressivement les autres chansons crées autour ces passages. Peut-être qu'il y a des chansons exceptionnelles que j'ai loupé lors de la première écoute ? Je décide donc de tout réecouter et d'inscrire dans un excel quelques infos et un petit commentaire sur chaque chanson de chaque stream (ce qui a donné la <a href="./tierlist" class="custom-link">Tierlist</a>)
+                </p>
+                <p>
+                    Avoir un excel c'est bien, mais c'est pas super pratique quand il n'est pas sous la main. Pourquoi pas en faire un site qui sera accessible à n'importe quel moment et n'importe où ? Et pourquoi pas le partager aux autres fans de Marc ? Et pourquoi pas rajouter <a href="./#jukebox" class="custom-link">quelques élements</a> pour les gens qui ne connaissent pas et veulent découvrir ? Et pourquoi pas le traduire en anglais car sa fanbase est principalement des US ? C'est après toutes ces petites étapes et réflexions que ce site a vu le jour. Lancé en 2020, j'y travaille de temps à autre depuis <a href="../changelog" class="custom-link">quelques années</a>.
+                </p>
+            </div>
+        </div>
+        <div id="troubleshooting">
+            <h2>Bugs connus</h2>
+            <div class="paragraphe">
+                <p>
+                    Le codage web n'est ni mon domaine d'expertise ni ma passion (même si j'avoue que c'est plutôt satisfaisant quand tout fonctionne bien). Le site web devrait fonctionner correctement sur ordinateur. Cependant, j'ai constaté que les intégrations Twitch réagissent différemment selon les navigateurs et les appareils (par exemple, cela fonctionne sur Safari mais pas sur Firefox sur un iPhone Mini, et ne fonctionne sur aucun navigateur de l'iPhone 16...). Si vous savez comment résoudre certains problèmes que vous pourriez rencontrer, n'hésitez pas à me contacter.
+                </p>
+            </div>
+        </div>
+        <div id="contact">
+            <h2>Contact</h2>
+            <div class="paragraphe">
+                <p>
+                    Si vous avez des questions, des suggestions, des critiques, des remarques, des compliments... n'hésitez pas à me contacter par mail à <contact class="contact">justloopingaround[at]gmail.com</contact>.
+                </p>
+            </div>
+        </div>
+        <div id="support">
+            <h2>Support</h2>
+            <div class="paragraphe">
+                <p>
+                    Si vous êtes riche, que vous avez de l'argent qui traine ou simplement que vous appréciez le projet et vous souhaitez montrer votre appréciation autrement qu'en l'utilisant et le partageant, vous pouvez le soutenir en donnant sur <a href="https://ko-fi.com/justloopingaround" class="custom-link">ce lien Ko-Fi</a>.
+                </p>
+            </div>
+        </div>
+        <div id="thanks">
+            <h2>Remerciements</h2>
+            <div class="paragraphe">
+                <p>
+                    Merci à Marc pour les streams, et merci à vous d'utiliser ce site. Cela me rempli de joie quand quelqu'un découvre une chanson grâce au Jukebox ou retrouve une chanson qu'il avait dans la tête mais qu'il ne savait plus de quel stream elle venait.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<hr>
+<p class="bot"><bot class="info"><a href="https://www.justloopingaround.com/fr/about" class="bot-link">JustLoopingAround</a><a href="https://www.justloopingaround.com/fr/about" class="bot-link-no-underline"> ⓘ</a></bot> | <bot class="info"><a href="https://www.justloopingaround.com/fr/about#contact" class="bot-link">Contact</a><a href="https://www.justloopingaround.com/fr/about#contact" class="bot-link-no-underline"> ✉</a></bot> | <bot class="info"><a href="https://www.justloopingaround.com/fr/about#support" class="bot-link">Support</a><a href="https://www.justloopingaround.com/fr/about#support" class="bot-link-no-underline"> ♡</a></bot></p>
+</html>

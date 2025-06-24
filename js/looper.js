@@ -1,142 +1,56 @@
 tierlist = window.myConfig.tierlist
 language = window.myConfig.language;
 
-if (tierlist) {
-    const hallOfFameCategories = [
-        {
-            title: hofTitles[0],
-            songs: [
-                { id: "s190623", name: "Katie's pregnant", overlayName: "Katie's pregnant" }
-            ]
-        },
-        {
-            title: hofTitles[1],
-            songs: [
-                { id: "s210328", name: "Get up", overlayName: "- Get up" }
-            ]
-        },
-        {
-            title: hofTitles[2],
-            songs: [
-                { id: "s200524", name: "Outside experiment", overlayName: "Outside experiment" },
-                { id: "s190825", name: "Entitlement", overlayName: "Entitlement" },
-                { id: "s201223t", name: "Die with harmonics", overlayName: "Die with harmonics" },
-                { id: "s200605t", name: "Mii Psychiatry", overlayName: "Mii Psychiatry", time: "0h46m20s" },
-                { id: "s180921", name: "Diarrhea", overlayName: "Diarrhea" },
-                { id: "s180429", name: "Gibberish", overlayName: "Gibberish" },
-                { id: "s180415", name: "Stoned", overlayName: "Stoned" },
-                { id: "s200517", name: "Classified", overlayName: "Classified" }
-            ]
-        },
-        {
-            title: hofTitles[3],
-            songs: [
-                { id: "s200510", name: "Birthday freedom", overlayName: "Birthday freedom" }
-            ]
-        },
-        {
-            title: hofTitles[4],
-            songs: [
-                { id: "s190825", name: "Mushroom trip", overlayName: "Mushroom trip" },
-                { id: "s200421t", name: "Fall in love", overlayName: "Fall in love", time: "0h20m26s" }
-            ]
-        },
-        {
-            title: hofTitles[5],
-            songs: [
-                { id: "s190609", name: "Hold on", overlayName: "Wrestling" },
-                { id: "s190908", name: "Love your fellow human", overlayName: "Love your fellow human" },
-                { id: "s181013", name: "Linda's 2nd Life", overlayName: "Linda's 2nd Life" },
-                { id: "s190714", name: "Somewhere", overlayName: "- Somewhere" },
-                { id: "s200302", name: "Cuddle puddle", overlayName: "Cuddle puddle" }
-            ]
-        },
-        {
-            title: hofTitles[6],
-            songs: [
-                { id: "s200405", name: "Sexting", overlayName: "Sexting" },
-                { id: "s190728", name: "8-bit fucking", overlayName: "8-bit fucking" },
-                { id: "s210523", name: "Therapy 2.0", overlayName: "Therapy 2.0" },
-                { id: "s210606", name: "Quiet end", overlayName: "Quiet end" },
-                { id: "s200419", name: "Mister Mustachio", overlayName: "- Mister Mustachio" },
-                { id: "s200719", name: "B-side summer song", overlayName: "B-side summer song" }
-            ]
-        },
-        {
-            title: hofTitles[7],
-            songs: [
-                { id: "s200605t", name: "Tempo love", overlayName: "Tempo love", time: "0h11m27s" },
-                { id: "s210523", name: "Move your body now", overlayName: "Move your body now" },
-                { id: "s200412", name: "Bisexual Jesus", overlayName: "Bisexual Jesus" },
-                { id: "s200503", name: "Therapy", overlayName: "Therapy" },
-                { id: "s210404", name: "Need that brunch", overlayName: "Need that brunch" },
-                { id: "s210411", name: "Professional", overlayName: "Professional" },
-                { id: "s210613", name: "Gettin' fucked up tonight", overlayName: "- Gettin' fucked up tonight" },
-                { id: "s210606", name: "Connection", overlayName: "Connection" },
-                { id: "s210411", name: "Keep working & flying", overlayName: "- Keep working & flying" },
-                { id: "s200321", name: "Love", overlayName: "Love" },
-                { id: "s180715l", name: "Girl's club", overlayName: "Girl's club" }
-            ]
-        },
-        {
-            title: hofTitles[8],
-            songs: [
-                { id: "s190909t", name: "AFK song", overlayName: "Afk song", time: "0h7m25s" },
-                { id: "s200426", name: "Running", overlayName: "Running" },
-                { id: "s210629", name: "Upright position", overlayName: "Airplane" },
-                { id: "s180420l", name: "Acte 3: Ascending", overlayName: "Acte 3: Ascending" }
-            ]
-        },
-        {
-            title: hofTitles[9],
-            songs: [
-                { id: "s200605t", name: "I'm feeling it", overlayName: "I'm feeling it" },
-                { id: "s210523", name: "HARRY MACK IS ON THE STREAM", overlayName: "HARRY MACK IS ON THE STREAM" },
-                { id: "s170915", name: "Music Break No. 4 | Bored Certified", overlayName: "Music Break No. 4 | Bored Certified" }
-            ]
-        }
-    ];
-
-
-    const container = document.querySelector('.hof-content-section');
-
-    hallOfFameCategories.forEach(category => {
-        const categoryDiv = document.createElement('div');
-        categoryDiv.classList.add('hof-category');
-
-        const title = document.createElement('h3');
-        title.textContent = category.title;
-        categoryDiv.appendChild(title);
-
-        const songsDiv = document.createElement('div');
-        songsDiv.classList.add('hof-songs');
-        category.songs.forEach((song, index) => {
-            const songP = document.createElement('p');
-            const songLink = document.createElement('a');
-            songLink.classList.add('custom-link');
-
-            songLink.onclick = (event) => {
-                if (song.time) {
-                    showAlbumOverlay(event, song.id, song.overlayName, song.time);
-                } else {
-                    showAlbumOverlay(event, song.id, song.overlayName);
-                }
-            };
-
-            songLink.innerHTML = `<u>${song.name}</u>`;
-            songP.appendChild(songLink);
-            songsDiv.appendChild(songP);
-
-            if (index < category.songs.length - 1) {
-                const dashP = document.createElement('p');
-                dashP.textContent = '-';
-                songsDiv.appendChild(dashP);
-            }
-        });
-        categoryDiv.appendChild(songsDiv);
-        container.appendChild(categoryDiv);
-    });
+const content_section = document.querySelector('.hof-content-section');
+if (!tierlist) {
+    content_section.style.height = '100%';
+    const container = document.querySelector('.hof-container');
+    const img = container.querySelector('img');
+    if (img) {
+        img.style.height = `${content_section.offsetHeight}px`;
+        img.style.objectFit = 'cover';
+    }
+    if (img) {
+        img.style.objectPosition = 'center 9%';
+    }
 }
+
+hallOfFameCategories.forEach(category => {
+    const categoryDiv = document.createElement('div');
+    categoryDiv.classList.add('hof-category');
+
+    const title = document.createElement('h3');
+    title.textContent = category.title;
+    categoryDiv.appendChild(title);
+
+    const songsDiv = document.createElement('div');
+    songsDiv.classList.add('hof-songs');
+    category.songs.forEach((song, index) => {
+        const songP = document.createElement('p');
+        const songLink = document.createElement('a');
+        songLink.classList.add('custom-link');
+
+        songLink.onclick = (event) => {
+            if (song.time) {
+                showAlbumOverlay(event, song.id, song.overlayName, song.time);
+            } else {
+                showAlbumOverlay(event, song.id, song.overlayName);
+            }
+        };
+
+        songLink.innerHTML = `<u>${song.name}</u>`;
+        songP.appendChild(songLink);
+        songsDiv.appendChild(songP);
+
+        if (index < category.songs.length - 1) {
+            const dashP = document.createElement('p');
+            dashP.textContent = '-';
+            songsDiv.appendChild(dashP);
+        }
+    });
+    categoryDiv.appendChild(songsDiv);
+    content_section.appendChild(categoryDiv);
+});
 
 
 
@@ -312,11 +226,11 @@ async function getdb() {
     try {
         const dbUrl = ""
 
-        if (language === "fr") {
-            response = await fetch(extractDb(dbUrl+"_FR})"));
+        if (language === "en") {
+            response = await fetch(extractDb(dbUrl+"_EN})"));
         }
         else {
-            response = await fetch(extractDb(dbUrl+"_EN})"));
+            response = await fetch(extractDb(dbUrl+"_FR})"));
         }
         if (!response.ok) {
             throw new Error('Database fetch failed, reload the page');
@@ -328,9 +242,6 @@ async function getdb() {
         console.error('Database fetch failed, reload the page: ', error);
     }
 }
-
-
-
 
 // Render albums
 document.addEventListener('DOMContentLoaded', getdb);
@@ -447,6 +358,30 @@ function showAlbumOverlay(event, albumId, songTitle = null, timestamp = "0h0m0s"
                 });
                 window.twitchPlayer = player;
             };
+            twitchScript.onerror = function () {
+                console.warn("Failed to load Twitch script, trying local fallback...");
+                const fallbackScript = document.createElement('script');
+                fallbackScript.src = jsPath + "/twitch-embed.js";
+                fallbackScript.onload = function () {
+                    console.log("Local Twitch fallback loaded.");
+
+                    const player = new Twitch.Player("twitch-embed", {
+                        video: extractTwVideoId(firstSongUrl),
+                        autoplay: false,
+                        width: twitchEmbedDiv.offsetWidth,
+                        height: twitchEmbedDiv.offsetWidth * 9 / 16,
+                        time: timestamp
+                    });
+                    window.twitchPlayer = player;
+                };
+
+                fallbackScript.onerror = function () {
+                    console.error("Local fallback script also failed. Giving up.");
+                    document.getElementById("twitch-embed").innerText =
+                        "Twitch video unavailable. Please use direclty the URL from the song name or try again later.";
+                };
+                document.body.appendChild(fallbackScript);
+            };
             overlayContent.appendChild(twitchScript);
         } else {
             const videoId = extractYtVideoId(firstSongUrl);
@@ -505,7 +440,7 @@ function showAlbumOverlay(event, albumId, songTitle = null, timestamp = "0h0m0s"
             const row = document.createElement('tr');
             Object.values(song).forEach(value => {
                 if (value !== song.url && value !== song.albumId && value !== song.date && value !== song.albumTitle &&
-                    (tierlist || (value !== song.rank && value !== song.genre && value !== song.comment))) {
+                    (tierlist || (value !== song.rank && value !== song.comment))) {
                     const cell = document.createElement('td');
                     // If value is song name, make it clickable with the URL
                     if (value == song.name) {
@@ -547,6 +482,7 @@ function showAlbumOverlay(event, albumId, songTitle = null, timestamp = "0h0m0s"
                                 link.style.color = "black";
                             } else {
                                 link.style.fontWeight = "bold";
+                                link.style.color = "#FF9900";
                             }
                         } else if (tierlist) {
                             link.style.color = rankColors[song.rank] ? rankColors[song.rank][0] : '#ffffff';
@@ -562,6 +498,9 @@ function showAlbumOverlay(event, albumId, songTitle = null, timestamp = "0h0m0s"
                             if (songTitle && song.name === songTitle) {
                                 if (tierlist) {
                                     link.style.color = "black";
+                                }
+                                else {
+                                    link.style.color = "#FF9900";
                                 }
                             } else if (tierlist) {
                                 link.style.color = rankColors[song.rank] ? rankColors[song.rank][0] : '#ffffff';
@@ -829,6 +768,9 @@ function nextSong(currentSongIndex) {
     if (tierlist) {
         document.querySelector('.jukebox-song-title').style.color = rankColors[song.rank] ? rankColors[song.rank][1] : '#ffffff';
     }
+    else {
+        document.querySelector('.jukebox-song-title').style.color = '#FFCC00';
+    }
     document.getElementById('song-length').textContent = song.length;
     document.getElementById('song-genre').textContent = song.genre;
     document.getElementById('song-tempo').textContent = song.tempo;
@@ -859,16 +801,53 @@ function nextSong(currentSongIndex) {
         twitchEmbedDiv.className = 'jukebox-twitch-embed';
         embedContainer.appendChild(twitchEmbedDiv);
 
+        // const jukeboxTwitchScript = document.createElement('script');
+        // jukeboxTwitchScript.src = "https://player.twitch.tv/js/embed/v1.js";
+        // jukeboxTwitchScript.onload = function() {
+        //     const jukeboxTwitchPlayer = new Twitch.Player("jukebox-twitch-embed", {
+        //         video: extractTwVideoId(song.url),
+        //         width: twitchEmbedDiv.offsetWidth,
+        //         height: twitchEmbedDiv.offsetWidth * 9 / 16,
+        //         time: getTwTime(extractTwTimestamp(song.url))
+        //     });
+        //     window.jukeboxTwitchPlayer = jukeboxTwitchPlayer;
+        // };
+        // embedContainer.appendChild(jukeboxTwitchScript);
         const jukeboxTwitchScript = document.createElement('script');
         jukeboxTwitchScript.src = "https://player.twitch.tv/js/embed/v1.js";
         jukeboxTwitchScript.onload = function() {
             const jukeboxTwitchPlayer = new Twitch.Player("jukebox-twitch-embed", {
                 video: extractTwVideoId(song.url),
+                autoplay: false,
                 width: twitchEmbedDiv.offsetWidth,
                 height: twitchEmbedDiv.offsetWidth * 9 / 16,
                 time: getTwTime(extractTwTimestamp(song.url))
             });
             window.jukeboxTwitchPlayer = jukeboxTwitchPlayer;
+        };
+        jukeboxTwitchScript.onerror = function () {
+            console.warn("Failed to load Twitch script, trying local fallback...");
+            const jukeboxFallbackScript = document.createElement('script');
+            jukeboxFallbackScript.src = jsPath + "/twitch-embed.js";
+            jukeboxFallbackScript.onload = function () {
+                console.log("Local Twitch fallback loaded.");
+
+                const jukeboxTwitchPlayer = new Twitch.Player("jukebox-twitch-embed", {
+                    video: extractTwVideoId(song.url),
+                    autoplay: false,
+                    width: twitchEmbedDiv.offsetWidth,
+                    height: twitchEmbedDiv.offsetWidth * 9 / 16,
+                    time: getTwTime(extractTwTimestamp(song.url))
+                });
+                window.jukeboxTwitchPlayer = jukeboxTwitchPlayer;
+            };
+
+            jukeboxFallbackScript.onerror = function () {
+                console.error("Local fallback script also failed. Giving up.");
+                document.getElementById("twitch-embed").innerText =
+                    "Twitch video unavailable. Please use direclty the URL from the song name or try again later.";
+            };
+            document.body.appendChild(jukeboxFallbackScript);
         };
         embedContainer.appendChild(jukeboxTwitchScript);
     } else {
@@ -981,7 +960,7 @@ function createSongRow(song, tbody) {
 
     Object.values(song).forEach(value => {
         if (value !== song.url && value !== song.albumId &&
-            (tierlist || (value !== song.rank && value !== song.genre && value !== song.comment))) {
+            (tierlist || (value !== song.rank && value !== song.comment))) {
             const cell = document.createElement('td');
 
             // If the value is the song name, make it clickable with a link to the URL

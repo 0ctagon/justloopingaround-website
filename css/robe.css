@@ -1,0 +1,1183 @@
+/* GENERAL */
+html {
+    font-size: 18px; /* Base font size */
+}
+body {
+    background-color: #1E1E1E;
+    color: #ffffff;
+    font-family: 'Calibri', 'Arial', 'Helvetica', sans-serif;
+    text-align: left;
+    margin: 0px auto;
+    margin-top: 150px;
+    width: 100%; /* Use a responsive width */
+    max-width: 1113px; /* Set a maximum width */
+    text-align:left;
+    /* border: 1px solid #ff0000; */
+    box-sizing: border-box;
+}
+
+
+.bot {
+    font-size: 0.7rem;
+    font-family: 'Roboto Mono', monospace;
+    padding-bottom: 2%;
+    text-align: center; /* center text inside the paragraph */
+}
+
+bot.info {
+    color: #cbcbcb;
+}
+
+a.bot-link-no-underline {
+    color: #cbcbcb;
+    text-decoration: none; /* Remove underline */
+}
+
+a.bot-link {
+    color: #cbcbcb;
+}
+
+
+
+
+.top-banner, .top-banner-stats, .top-banner-fr {
+    min-height: 170px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-size: 1112px;
+}
+
+.top-banner {
+    background-image: url('../img/beginv2.jpg');
+}
+
+.top-banner-fr {
+    background-image: url('../img/beginv2.jpg');
+}
+
+.top-banner-stats {
+    background-image: url('../img/math.jpg');
+}
+
+.top-header {
+    max-width: 80%;
+}
+
+.section {
+    text-align: left;
+    margin: 30px;
+    padding-top: 20px;
+}
+
+.paragraphe {
+    text-align: left;
+    margin: 20px;
+    padding-bottom: 10px;
+}
+
+marc.yt {
+    color:rgb(0, 0, 0);
+    background-color: rgb(255, 99, 71);
+}
+
+marc.tw {
+    color:rgb(255, 255, 255);
+    background-color: rgb(128, 54, 255);
+}
+
+marc.section-link {
+    background-color: #252526;
+    font-weight: bold;
+}
+
+a.custom-link {
+    color: #fec494;
+    cursor: pointer;
+}
+
+a.custom-link-notierlist {
+    color: #FFCC00;
+    cursor: pointer;
+}
+
+a.custom-link:hover, a.custom-link-notierlist:hover {
+    color: #ff0000;
+}
+
+a.idealogues-0 {
+    color: #FF0000; /* Red */
+    cursor: pointer;
+}
+a.idealogues-1 {
+    color: #FF7F00; /* Orange */
+    cursor: pointer;
+}
+a.idealogues-2 {
+    color: #FFA500; /* Amber/Yellow-Orange */
+    cursor: pointer;
+}
+a.idealogues-3 {
+    color: #FFFF00; /* Yellow */
+    cursor: pointer;
+}
+a.idealogues-4 {
+    color: #7FFF00; /* Chartreuse (Yellow-Green) */
+    cursor: pointer;
+}
+a.idealogues-5 {
+    color: #00FF00; /* Green */
+    cursor: pointer;
+}
+a.idealogues-6 {
+    color: #00FFFF; /* Cyan (Blue-Green) */
+    cursor: pointer;
+}
+a.idealogues-7 {
+    color: #1E90FF; /* Blue */
+    cursor: pointer;
+}
+a.idealogues-8 {
+    color: #7B68FF; /* Indigo */
+    cursor: pointer;
+}
+a.idealogues-9 {
+    color: #DA70D6; /* Violet */
+    cursor: pointer;
+}
+
+contact.contact {
+    color: #fec494;
+}
+
+/* For smaller media */
+@media only screen and (max-width: 1081px) {
+    html {
+        font-size: 25px; /* Smaller font size for smaller screens */
+    }
+}
+
+/* Menu Icon Styles */
+.top-section {
+    max-width: 1113px;
+    margin: 30px auto 0 auto; /* top: 30px, center horizontally */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative; /* needed for absolute child positioning */
+    padding: 0 10px; /* optional horizontal padding */
+}
+
+.menu-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    position: absolute;
+    width: 3rem;
+    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    background-color: #313338;
+    border-radius: 8px;
+    padding: 10px;
+    top: 0;
+    right: 20px;
+}
+
+.menu-icon:hover {
+    transform: translateY(-2px); /* Added hover effect */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+.menu-icon.sticky {
+    position: fixed;
+    top: 0px;
+    right: var(--right); /* dynamic */
+    z-index: 500;
+}
+
+.menu-img {
+    width: 2rem;
+    height: auto;
+}
+
+.menu-img-stats {
+    width: 1.9rem;
+    height: auto
+}
+
+
+button .menu-img {
+    width: 1.3rem;
+    height: 1.3rem;
+    margin-right: 8px;
+    transform: translateY(0.2rem); /* Adjust vertical alignment */
+}
+button .menu-img-stats {
+    margin-right: 8px;
+    transform: translateY(0.2rem); /* Adjust vertical alignment */
+    transform: translateX(-0.4rem); /* Adjust horizontal alignment */
+}
+
+.menu-text {
+    font-size: 0.7rem;
+    color: #ffffff;
+    margin-top: 5px;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 0; /* Position below the icon */
+    right: 100%; /* Align with the left edge of the menu icon */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    flex-direction: column;
+    border-radius: 10px;
+    background-color: #35373C;
+    z-index: 1000; /* Ensure it appears above other elements */
+}
+
+.dropdown-menu button {
+    display: block;
+    width: 12rem; /* Explicit width */
+    padding: 8px 16px;
+    background: none;
+    border: none;
+    border-radius: 10px;
+    text-align: left;
+    font-size: 1rem;
+    cursor: pointer;
+    color: #ffffff;
+    text-decoration: none;
+    background-color: #35373C;
+    box-sizing: border-box; /* Ensures padding is included in width */
+    margin: 0; /* Reset margin */
+}
+
+.dropdown-menu button:hover {
+    background-color: #1E1E1E;
+}
+
+.dropdown-divider {
+    height: 2px;
+    background-color: #1E1E1E;
+    margin: 0;
+}
+
+/* HALL OF FAME */
+
+.hof-container {
+    display: flex;
+    align-items: stretch; /* Ensures that children stretch to the height of the tallest item */
+    margin-top: 10px;
+}
+
+.hof-image-section {
+    width: 20%; /* Adjust the width of the image section */
+    display: flex;
+    justify-content: left;
+}
+
+.hof-image-section img {
+    width: 100%; /* Image takes up full width of the container */
+    height: auto; /* Maintains aspect ratio */
+    min-height: 100%; /* Ensures the image height is at least the height of the container */
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.1); /* Added box shadow */
+    object-fit: cover; /* Ensures the image covers the area without stretching */
+}
+
+.hof-content-section {
+    flex: 2; /* Takes up the remaining space */
+    padding-left: 20px;
+    padding-bottom: 20px;
+    background-color: #252526;
+    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.1); /* Added box shadow */
+    display: flex; /* Allows for proper height adjustment */
+    flex-direction: column; /* Stacks content vertically */
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.hof-category {
+    display: flex;
+    flex-direction: column; /* Stack heading and songs vertically */
+    gap: 10px; /* Space between heading and songs container */
+    margin-bottom: 10px;
+    margin-top: 10px;
+    font-size: 1.05rem;
+}
+
+.hof-category h3 {
+    margin: 0px;
+}
+
+.hof-songs {
+    display: flex; /* Use flexbox to lay out songs horizontally */
+    flex-wrap: wrap;
+    gap: 10px; /* Adds space between song titles */
+    margin-left: 30px;
+    font-size: 1rem;
+}
+
+.hof-songs p {
+    margin: 0;
+    font-size: 1rem;
+    white-space: nowrap; /* Prevents song titles from wrapping */
+}
+
+
+
+
+/* ALBUMS */
+.album {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5%; /* Added gap for better spacing */
+    padding: 5%; /* Added padding for better spacing */
+}
+.album-item {
+    width: 30%;
+    min-width: 288px;
+    margin-bottom: 5%;
+    background-color: #313338; /* Added background color */
+    border-radius: 10px; /* Added border radius for rounded corners */
+    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.1); /* Added box shadow */
+    transition: transform 0.3s, box-shadow 0.3s; /* Added transition for hover effect */
+    cursor: pointer;
+    position: relative;
+}
+
+.album-item:hover {
+    transform: translateY(-10px); /* Added hover effect */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+.album-item-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-top-left-radius: 10px; /* Rounded corners for the top of the image */
+    border-top-right-radius: 10px; /* Rounded corners for the top of the image */
+}
+
+.album-item svg {
+    position: absolute;
+    top: 0.4rem; /* Adjust the top positioning */
+    right: 0.6rem; /* Adjust the right positioning */
+    width: 1.5rem; /* Adjust the size of the SVG circle */
+    height: 1.7rem; /* Adjust the height */
+}
+.album-item-title {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-top: 10px;
+    padding: 0 10px; /* Added padding for better spacing */
+    text-align: center; /* Centered text */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.album-item-title svg {
+    margin-left: 10px; /* Space between the title and the circle */
+}
+
+.album-item-date {
+    font-size: 1rem;
+    margin-top: 5px;
+    padding: 0 10px; /* Added padding for better spacing */
+    margin-bottom: 5px;
+    text-align: center; /* Centered text */
+    color: #cbcbcb; /* Added color for better readability */
+}
+
+.youtube-icon {
+    position: absolute;
+    top: 0.2rem; /* Adjust the top positioning */
+    left: 0.6rem; /* Adjust the right positioning */
+    width: 2.5rem; /* Adjust the size of the SVG circle */
+    height: 2.7rem; /* Adjust the height */
+    z-index: 2;
+}
+
+.twitch-icon {
+    position: absolute;
+    top: 0.4rem; /* Adjust the top positioning */
+    left: 0.6rem; /* Adjust the right positioning */
+    width: 2.0rem; /* Adjust the size of the SVG circle */
+    height: 2.0rem; /* Adjust the height */
+    z-index: 2;
+}
+
+.live-icon {
+    position: absolute;
+    top: 0.7rem; /* Adjust the top positioning */
+    left: 3rem; /* Adjust the right positioning */
+    width: 1.2rem; /* Adjust the size of the SVG circle */
+    height: 1.2rem; /* Adjust the height */
+    z-index: 3;
+}
+
+/* .youtube-icon-background {
+    position: absolute;
+    top: 0.25rem;
+    left: 0.6rem;
+    width: 2.5rem;
+    height: 2.7rem;
+    z-index: 1;
+    transform: scale(1.2);
+} */
+
+/* OVERLAY */
+
+.album-overlay {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Ensure it is on top */
+    overflow-y: auto; /* Enable vertical scrolling */
+}
+
+.album-overlay-content {
+    background-color: #252526;
+    max-width: 90%;
+    max-height: 95%; /* Limit the height of the overlay content */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow-y: auto; /* Enable vertical scrolling */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+.album-overlay-content table {
+    border-collapse: collapse;
+    background-color: #1e1e1e8f;
+    border-radius: 10px;
+    overflow-x: auto; /* Enable horizontal scrolling */
+    display: block; /* Ensure the table takes up block-level space */
+    width: 100%; /* Ensure the table takes full width */
+}
+
+.album-info {
+    display: inline-grid; /* Use grid layout for alignment */
+    grid-template-columns: auto 1fr; /* Two columns: auto width for labels, remaining space for values */
+    gap: 1rem; /* Space between items */
+    margin-bottom: 1rem; /* Space below the info */
+    padding: 20px 50px 20px 10px;
+    border-radius: 5px;
+    box-sizing: border-box;
+    border-left: 10px solid #1E1E1E;
+    background-color: #1e1e1e6a;
+}
+
+.album-title {
+    font-size: 1.8rem; /* Medium font size */
+    font-weight: bold;
+    margin-left: 1rem;
+    /* white-space: nowrap; */
+    grid-column: span 2; /* Span both columns */
+    line-height: 1; /* Adjust line height for closer lines */
+}
+
+.album-date,
+.album-when-ranked {
+    display: contents; /* Use contents to apply styles to children */
+    font-size: 1.2rem; /* Smaller than album title */
+}
+
+.album-date-label {
+    white-space: nowrap;
+    margin-left: 2rem; /* Reduced margin */
+}
+
+.album-date-value {
+    margin-left: 0.5rem; /* Reduced margin */
+}
+
+.album-when-ranked-label {
+    font-size: 0.8rem; /* Smaller than album title */
+    white-space: nowrap;
+    margin-left: 2rem; /* Reduced margin */
+    color: #cbcbcb;
+}
+
+.album-when-ranked-value {
+    font-size: 0.8rem; /* Smaller than album title */
+    margin-left: 0.5rem; /* Reduced margin */
+    color: #cbcbcb;
+}
+
+.album-info {
+    line-height: 0.5; /* Adjust line height for closer lines */
+}
+
+.album-comment {
+    display: inline-block; /* Ensure the box size is only for the content */
+    font-size: 1rem; /* Smaller than album title */
+    margin-left: 2rem; /* Reduced margin */
+    color: #cbcbcb;
+    grid-column: span 2; /* Span both columns */
+    padding: 5px; /* Add padding for better spacing */
+    background-color: #1e1e1e6a;
+    line-height: 1; /* Adjust line height for closer lines */
+}
+
+
+/* TABLE */
+.album-overlay-content table {
+    border-collapse: collapse;
+    background-color: #1e1e1e8f;
+    border-radius: 10px;
+}
+.album-overlay-content table th, .album-overlay-content table td {
+    padding: 10px;
+    /* border: 1px solid #1E1E1E; */
+    /* border-radius: 5px; */
+}
+
+.top-column {
+    font-size: 1.1rem;
+    white-space: nowrap;
+    text-align: center;
+    color: rgb(203, 203, 203);
+    background-color: #1E1E1E;
+}
+
+.normal-column {
+    font-size: 1rem;
+    white-space: nowrap;
+    text-align: center;
+}
+
+.choree-column {
+    font-size: 1rem;
+    white-space: nowrap;
+    text-align: left;
+    min-width: 450px;
+}
+
+.break-column {
+    font-size: 1rem;
+    word-break: break-word;
+    white-space: normal;
+    min-width: 450px;
+    text-align: left;
+}
+
+.break-column-center {
+    font-size: 1rem;
+    word-break: break-word;
+    white-space: normal;
+    min-width: 450px;
+    text-align: center;
+}
+
+.title-break-column {
+    font-size: 1rem;
+    word-break: break-word;
+    white-space: normal;
+    min-width: 200px;
+    text-align: center;
+}
+
+.top-column, .normal-column, .choree-column, .break-column, .break-column-center {
+    border-top : 3px solid #252526;
+}
+
+.close-btn {
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: #ffffff;
+    /* background-color: #1e1e1e8f; */
+    border: none;
+    border-radius: 10%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* box-shadow: 2px 2px 0 0 rgba(0, 0, 0, 1); */
+    flex: 0 0 auto;
+}
+
+.go-right {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 10px;
+    z-index: 2;
+}
+
+/* IFRAMES */
+.youtube-iframe, .twitch-embed {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    aspect-ratio: 16/9;
+    display: block;
+    margin: 0 auto;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.jukebox-youtube-iframe, .jukebox-twitch-embed {
+    width: 96%; /* Adjust width to account for right margin */
+    height: auto;
+    aspect-ratio: 16/9;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+/* JUKEBOX */
+
+.jukebox-embed-container {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+
+.jukebox-wrapper {
+    display: flex;
+    justify-content: center; /* Center the jukebox-song */
+    align-items: center; /* Align items vertically */
+    position: relative; /* Allows positioning of the small square */
+    margin: 0 auto; /* Center wrapper on the page */
+    padding-top: 20px;
+    width: 100%; /* Ensure the wrapper takes full width */
+}
+
+.jukebox-song {
+    width: 70%; /* Width for the main jukebox element */
+    height: auto; /* Adjust height to accommodate dynamic content */
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    background-color: #252526;
+    color: #fff; /* Ensure text color is visible */
+}
+
+
+.jukebox-prev, .jukebox-next {
+    min-width: 80px; /* Adjust width as needed */
+    min-height: 80px;
+    border-radius: 8px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+    overflow: hidden;
+    background-color: #313338;
+}
+
+.jukebox-prev {
+    margin-right: 5%;
+}
+
+.jukebox-next {
+    margin-left: 5%;
+}
+
+.jukebox-song, .jukebox-prev, .jukebox-next, .jukebox-param {
+    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.1);
+}
+
+.jukebox-next:hover, .jukebox-prev:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.jukebox-next:active, .jukebox-prev:active {
+    transform: translateY(0px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.jukebox-img {
+    margin: 2%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.jukebox-play-button {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 8%; /* Adjust as needed */
+    height: auto;
+    pointer-events: none; /* Makes the overlay image unclickable */
+}
+
+.jukebox-next-text, .jukebox-prev-text {
+    text-align: center;
+    width: 1.5rem;
+    width: 1.5rem;
+}
+
+.jukebox-song-header {
+    /* width: 68%; */
+    display: flex;
+    justify-content: space-between;
+    border-top: 8px solid #1E1E1E; /* Add a border above the album details */
+}
+
+.jukebox-song-title {
+    font-size: 1.3rem;
+    font-weight: bold;
+    /* padding but smaller on top */
+    padding: 10px;
+    margin-left: 1%;
+}
+
+.settings-button {
+    cursor: pointer;
+    z-index: 5;
+    width: 1.5rem;
+    height: 1.5rem;
+    margin: 10px;
+}
+
+/* Song details */
+.jukebox-song-details {
+    grid-template-columns: minmax(100px, auto) 1fr; /* First column has a minimum width of 100px */
+    gap: 5px 2rem; /* Adjusts space between rows and columns */
+    padding: 0 0 5px 10px;
+    display: none;
+    margin: 0 2% 2% 2%;
+    font-size: 1rem;
+}
+
+.song-detail {
+    display: contents;
+}
+
+.song-detail-label {
+    font-weight: bold;
+}
+
+.song-detail-value {
+    text-align: left;
+    white-space: pre-wrap; /* Wraps long text */
+}
+
+.song-live-detail {
+    display: contents;
+}
+
+.song-live-detail-value {
+    font-weight: bold;
+    text-align: right;
+    white-space: pre-wrap; /* Wraps long text */
+    color: #cbcbcb;
+}
+
+.jukebox-song-album-detail {
+    justify-content: space-between; /* Distribute items to the edges */
+    padding: 10px 3% 10px 3%;
+    border-top: 8px solid #1E1E1E; /* Add a border above the album details */
+    display: none;
+    cursor: pointer;
+    /* background-color: #313338; */
+}
+
+.jukebox-song-album-detail:hover {
+    background-color: #1E1E1E;
+}
+
+
+.jukebox-song-album {
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #cbcbcb;
+}
+
+
+
+
+
+
+/* JUKEBOX PARAM */
+
+.jukebox-param-title {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-top: -1.5rem;
+    margin-bottom: 10px;
+    padding: 0 10px;
+    text-align: center;
+    color: #ffffff;
+}
+
+.jukebox-param-text {
+    font-size: 1.1rem;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    padding: 0 10px;
+    text-align: left;
+}
+
+.jukebox-overlay {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    overflow-y: auto;
+}
+.jukebox-overlay, .jukebox-param {
+    /* max-width: 500px; */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.3);
+}
+
+.jukebox-param {
+    width: 40%; /* Adjust as needed */
+    height: 90%; /* Adjust as needed */
+    background-color: #252526;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    margin-right: 5%; /* 5% space on the right */
+    padding-bottom: 50px;
+}
+
+
+.dropdown {
+    position: relative; /* Allows positioning of the dropdown content */
+    display: inline-block; /* Allows button to be inline with other elements */
+    width: 70%; /* Set to full width for centering */
+    text-align: center; /* Center the button text */
+    margin-left: 15%; /* Adjust this value as needed */
+}
+
+.dropbtn {
+    font-size: 1.1rem; /* Adjust size as needed */
+    background-color: #1E1F22; /* Button background */
+    color: white; /* Button text color */
+    padding: 10px; /* Button padding */
+    border-color: #1E1E1E;
+    border-radius: 5px; /* Rounded corners */
+    min-width: 100%;
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+.dropdown-content {
+    display: none; /* Hidden by default */
+    position: absolute; /* Position it absolutely */
+    background-color: #35373C; /* Background color for dropdown */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Shadow for dropdown */
+    z-index: 100; /* Ensure it appears above other elements */
+    border-radius: 5px; /* Rounded corners */
+    width: 30%; /* Set a fixed width for the dropdown */
+    min-width: 280px; /* Minimum width for the dropdown */
+    padding-right: 10px; /* Add padding for better spacing */
+    font-size: 1.1rem; /* Adjust size as needed */
+}
+
+.dropdown-content label {
+    display: inline-block; /* Each label will be a block element */
+    color: rgb(255, 255, 255); /* Text color */
+    cursor: pointer; /* Change cursor to pointer */
+    padding-top: 5px; /* Add padding for better spacing */
+    padding-bottom: 5px; /* Add padding for better spacing */
+    border-radius: 5px; /* Rounded corners */
+    min-width: 100%;
+    text-align: left; /* Center the text */
+    padding-left: 10px; /* Add padding for better spacing */
+}
+
+.dropdown-content label:hover {
+    background-color: #1E1E1E; /* Change background color on hover */
+}
+
+.dropdown:hover .dropdown-content {
+    display: block; /* Show the dropdown content on hover */
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #35373C; /* Change button color on hover */
+}
+
+
+
+
+/* DATABASE */
+
+.database-item {
+    display: flex; /* Use flexbox to arrange children side by side */
+    align-items: center; /* Center items vertically */
+    width: 60%;
+    height: 200px;
+    margin: 20px auto 1%; /* Combined margin properties */
+    background-color: #313338; /* Added background color */
+    border-radius: 10px; /* Added border radius for rounded corners */
+    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.1); /* Added box shadow */
+    transition: transform 0.3s, box-shadow 0.3s; /* Added transition for hover effect */
+    cursor: pointer; /* Added cursor pointer for better UX */
+    overflow: hidden; /* Ensure content doesn't overflow the rounded corners */
+}
+
+.database-item:hover {
+    transform: translateY(-10px); /* Added hover effect */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+.database-item img {
+    width: 60%; /* Image takes 70% of the width */
+    height: auto;
+    aspect-ratio: 16/9; /* Aspect ratio for responsive images */
+    object-fit: cover;
+    /* min-height: 200px; */
+    border-top-left-radius: 10px; /* Rounded corners for the top of the image */
+    border-bottom-left-radius: 10px; /* Rounded corners for the bottom of the image */
+}
+
+.database-item-text {
+    width: 40%; /* Text takes the remaining 30% of the width */
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-top: 10px;
+    padding: 0 10px; /* Added padding for better spacing */
+    text-align: center; /* Centered text */
+    color: #ffffff; /* Ensure text color is readable */
+}
+
+
+.database-overlay {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    border-radius: 10px;
+    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Table database */
+
+.database-overlay-content {
+    background-color: #252526;
+    max-width: 95%;
+    max-height: 90%; /* Limit the height of the overlay content */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow-y: auto; /* Enable vertical scrolling */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+.database-overlay-content table {
+    border-collapse: collapse;
+    background-color: #1e1e1e8f;
+    border-radius: 10px;
+    overflow-x: auto; /* Enable horizontal scrolling */
+    display: none; /* Ensure the table takes up block-level space */
+    width: 100%; /* Ensure the table takes full width */
+}
+
+.database-overlay-content th {
+    cursor: pointer;
+    font-size: 1rem;
+    white-space: nowrap;
+    text-align: center;
+    color: rgb(203, 203, 203);
+    border-top : 3px solid #252526;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #1E1E1E;
+}
+
+.database-overlay-content td {
+    padding: 0 15px 0 15px;
+    /* border: 1px solid #ddd; */
+    border-radius: 5px;
+    background-color: #1E1E1E;
+}
+
+
+.database-overlay-content tr:hover {
+    background-color: #1E1E1E;
+}
+
+.database-header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+#searchBar {
+    margin-bottom: 20px;
+    margin-top: 20px;
+    padding: 10px;
+    width: 15rem;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    flex: 1; /* Allow the search bar to grow and take up available space */
+    margin: 0 20px;
+}
+
+#search-icon {
+    width: 1.8rem;
+    height: 1.8rem;
+    /* shift a bit to the botton; */
+    transform: translateY(0.4rem) translateX(0.6rem);
+    cursor: pointer;
+}
+
+
+#searchCount {
+    margin-left: 10px;
+    font-size: 16px;
+    color: #cbcbcb;
+}
+
+.arrow {
+    display: inline-block;
+    transition: transform 0.3s;
+}
+
+.arrow.asc {
+    transform: rotate(180deg);
+}
+
+.arrow.desc {
+    transform: rotate(0deg);
+}
+
+
+
+/* CHANGELOG */
+.changelog {
+    display: grid;
+    gap: 1rem; /* Space between entries */
+    margin: 2%;
+}
+
+.changelog-entry {
+    display: grid;
+    grid-template-columns: minmax(100px, auto) 1fr; /* Align date and text */
+    gap: 5px 2rem;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.changelog-date {
+    font-weight: bold;
+    min-width: 130px;
+}
+
+.changelog-text {
+    font-size: 1rem;
+    margin: 0;
+}
+
+
+
+/* STATS */
+
+.figure {
+    display: none;
+    width: 500px;
+}
+
+figcaption {
+    font-size: 1rem;
+    text-align: left;
+}
+
+.fig-btn {
+    background-color: #313338;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.1); /* Added box shadow */
+    transition: transform 0.3s, box-shadow 0.3s; /* Added transition for hover effect */
+    margin: 5px 0;
+    font-size: 1rem;
+}
+
+.fig-btn:hover {
+    transform: translateY(-2px); /* Added hover effect */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+
+/* For smaller media */
+@media only screen and (max-width: 1081px) {
+    .album-item {
+        width: 45%;
+    }
+    .dropdown-menu button {
+        font-size: 1.4rem;
+        width: 15rem;
+        padding: 15px 20px;
+    }
+    .jukebox-item {
+        width: 80%;
+    }
+    .database-item {
+        width: 80%;
+    }
+    .jukebox-prev {
+        margin-right: 2%;
+    }
+    .jukebox-next {
+        margin-left: 2%;
+    }
+    .jukebox-play-button {
+        width: 10%;
+    }
+    .jukebox-param {
+        width: 65%;
+    }
+    .top-column, .normal-column, .choree-column, .break-column, .break-column-center, .jukebox-param-text, .dropdown-content {
+        font-size: 1.3rem;
+    }
+    .jukebox-song-details {
+        font-size: 1.1rem;
+    }
+    .jukebox-param-title {
+        font-size: 1.5rem;
+    }
+    #searchBar {
+        font-size: 1.2rem; /* Increase font size for better readability */
+    }
+    #searchCount {
+        font-size: 1.2rem; /* Increase font size for better readability */
+    }
+    .close-btn {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+/* CSS is boring to code, ty copilot */
