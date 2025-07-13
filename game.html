@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta property="og:title" content="JustLoopingAround">
+    <meta property="og:description" content="Repertoire of songs created by Marc Rebillet during live streams.">
+    <meta property="og:image" content="https://justloopingaround.com/img/og.png">
+    <meta property="og:url" content="https://justloopingaround.com/game">
+    <meta property="og:type" content="website">
+    <title>
+        Loople - JustLoopingAround
+    </title>
+    <link rel="icon" href="img/MARCsans.png">
+    <link rel="stylesheet" href="css/robe.css">
+    <script>
+        window.myConfig = {
+            tierlist: false,
+            language: 'en',
+        };
+    </script>
+    <script src="js/pedal.js" defer></script>
+    <script src="js/menu.js" defer></script>
+    <script src="js/looper.js" defer></script>
+</head>
+<div class="top-banner" id="top"></div>
+    <div class="top-section">
+        <div class="top-header">
+            <h1>Loople</h1>
+            <p id="loople-intro-text">Guess the song of the day!</p>
+        </div>
+        <div id="menuAnchor">
+            <div class="menu-icon" onclick="toggleMenu()">
+                <img src="svg/menu/menu.svg" alt="Menu Icon" class="menu-img"></img>
+                <span class="menu-text">MENU</span>
+                <div class="dropdown-menu" id="dropdownMenu">
+                    <div class="dropdown-divider"></div>
+                    <button onclick="window.location.href='.'">
+                        <img src="svg/menu/notierlist.svg" alt="repertoire page" class="menu-img">
+                        Repertoire
+                    </button>
+                    <button onclick="window.location.href = 'tierlist'">
+                        <img src="svg/menu/cup.svg" alt="Tierlist" class="menu-img">
+                        Tierlist
+                    </button>
+                    <button onclick="window.location.href='statistics'">
+                        <img src="svg/menu/stats.svg" alt="statistic page" class="menu-img">
+                        <div id="loople-dump" class="loople-dump" hidden></div>
+                        Statistics
+                    </button>
+                    <button onclick="window.location.href='changelog'">
+                        <img src="svg/menu/changelog.svg" alt="changelog page" class="menu-img">
+                        Changelog
+                    </button>
+                    <button onclick="window.location.href='about'">
+                        <img src="svg/menu/about.svg" alt="about page" class="menu-img">
+                        About
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="loople-section" id="loople">
+        <!-- <h2>Information</h2> -->
+        <div class="paragraphe">
+            <div class="loople-container">
+                <div class="loople-info-button-gamemode-daily" onclick="toggleEndlessMode()" id="loople-endless-mode-button">
+                    <img src="svg/ui/game.svg" alt="Game mode" class="jukebox-prev-text">
+                    <div id="loople-endless-mode-text" class="loople-endless-mode-text"></div>
+                </div>
+                <div class="loople-controls" id="loople-controls">
+                    <div class="loople-button">
+                        <div class="loople-play" id="loople-play0" onclick="playExtract(this)">
+                            <img src="svg/ui/play-extract.svg" alt="Settings" class="jukebox-prev-text" id="loople-play-img0"></img>
+                        </div>
+                        <div class="loople-play-text">Clip 1</div>
+                    </div>
+                    <div class="loople-button">
+                        <div class="loople-play-disabled" id="loople-play1">
+                            <img src="svg/ui/play-extract-disabled.svg" alt="Settings" class="jukebox-prev-text"></img>
+                        </div>
+                        <div class="loople-play-text-disabled" id="loople-play-text1">Clip 2</div>
+                    </div>
+                    <div class="loople-button">
+                        <div class="loople-play-disabled" id="loople-play2">
+                            <img src="svg/ui/play-extract-disabled.svg" alt="Settings" class="jukebox-prev-text"></img>
+                        </div>
+                        <div class="loople-play-text-disabled" id="loople-play-text2">Clip 3</div>
+                    </div>
+                    <div class="loople-button">
+                        <div class="loople-play-disabled" id="loople-play3">
+                            <img src="svg/ui/play-extract-disabled.svg" alt="Settings" class="jukebox-prev-text"></img>
+                        </div>
+                        <div class="loople-play-text-disabled" id="loople-play-text3">Clip 4</div>
+                    </div>
+                    <div class="loople-button">
+                        <div class="loople-play-disabled" id="loople-play4">
+                            <img src="svg/ui/play-extract-disabled.svg" alt="Settings" class="jukebox-prev-text"></img>
+                        </div>
+                        <div class="loople-play-text-disabled" id="loople-play-text4">Clip 5</div>
+                    </div>
+                </div>
+                <div class="loople-controls-bottom">
+                    <div class="loople-controls-label">Listen and guess!</div>
+
+                    <div class="loople-controls-buttons">
+                        <div id="loople-stats-button" hidden>
+                            <div class="loople-info-button-small" onclick="toggleStats()">
+                                <img src="svg/ui/stats.svg" alt="Info" class="jukebox-prev-text" >
+                                Stats
+                            </div>
+                        </div>
+                        <div class="loople-info-button-small" onclick="toggleLoopleInfo()">
+                            <img src="svg/menu/about.svg" alt="Info" class="jukebox-prev-text">
+                            Info
+                        </div>
+                        <div class="loople-info-button-small" onclick="skipLoopleExtract()" id="loople-skip-button">
+                            <img src="svg/ui/skip.svg" alt="Skip" class="jukebox-prev-text">
+                            Skip
+                        </div>
+                        <div id="loople-info-overlay" class="loople-info-overlay"  onclick="closeLoopleInfoIfOutside(event)">
+                            <div class="loople-info-content" id="loople-info-content">
+                                <div class="go-right" style="margin-bottom: -50px;">
+                                    <span class="loople-info-noshow" style="margin-right: 20px;" onclick="toggleHideInfo()" id="loople-hide-info">
+                                        <img src="svg/ui/close.svg" class="close-btn" ></img>Don't show this again
+                                    </span>
+                                    <span class="loople-info-noshow" onclick="toggleLoopleInfo()">
+                                        <img src="svg/ui/close.svg" class="close-btn"> Close</img>
+                                    </span>
+                                </div>
+                                <h2>How to play</h2>
+                                <p>Each day <span class="bold">once a day</span> you can guess a song that Marc made during a stream by listening to short extracts.</p>
+                                <p><img src="svg/ui/play-extract.svg" class="loople-song-detail-icon-text" alt="Play"> <span class="bold">Click on the play button</span> to listen to a <span class="bold">15-second clip</span> starting at the beginning of the song.</p>
+                                <p><span class="bold">Make a guess</span> by typing and selecting a song or <img src="svg/ui/skip.svg" class="loople-song-detail-icon-text" alt="Play"> <span class="bold">skip</span> to unlock the next clip, which will start at 20% (then 40%, 60% and 80%) of the song.</p>
+                                <p>Guessed songs are displayed below the guess bar. Each <span class="bold">recap can be clicked</span> to open the stream's page.</p>
+                                <p><span class="bold">Small hints are provided</span>: <span class="green-text">words in green</span> indicate that the highlighted information is also in the song of the day; <span class="orange-text">▲</span> and <span class="orange-text">▼</span> indicate if the <span class="bold">song's length is longer or shorter</span> than your guess, and if it was played in a <span class="bold">future or previous stream</span>.</p>
+                                <p>Description of the icons from the guessed song recap:</p>
+                                <div class="loople-song-detail-container">
+                                    <span class="loople-song-detail-info"><img src="svg/songinfo/genre.svg" class="loople-song-detail-icon" alt="Genre">Genre</span>
+                                    <span class="loople-song-detail-info"><img src="svg/songinfo/length.svg" class="loople-song-detail-icon" alt="Length">Length</span>
+                                    <span class="loople-song-detail-info"><img src="svg/songinfo/choree.svg" class="loople-song-detail-icon" alt="Choree">Choral</span>
+                                    <span class="loople-song-detail-info"><img src="svg/songinfo/tempo.svg" class="loople-song-detail-icon" alt="Tempo">Tempo</span>
+                                    <span class="loople-song-detail-info"><img src="svg/songinfo/stream-title.svg" class="loople-song-detail-icon" alt="Stream Title">Stream Title</span>
+                                    <span class="loople-song-detail-info"><img src="svg/songinfo/media.svg" class="loople-song-detail-icon" alt="Media">Stream Media</span>
+                                    <span class="loople-song-detail-info"><img src="svg/songinfo/date.svg" class="loople-song-detail-icon" alt="Date">Stream Date</span>
+                                    <span class="loople-song-detail-info"><img src="svg/songinfo/live.svg" class="loople-song-detail-icon" alt="Public">Stream with or without public</span>
+                                </div>
+                                <p>You can <span class="bold">make as many guesses</span> as you want, the game will end when you <span class="bold">guess the song correctly or if you concede</span> using the <img src="svg/ui/concede.svg" class="loople-song-detail-icon-text" alt="Play"> flag button.</p>
+                                <p>Good luck and have fun!</p>
+                                <p>Time before next daily song: <span class="bold"><span id="timer-next-song">[LOADING]</span></span></p>
+                            </div>
+                          </div>
+                        <div class="loople-info-button-big" onclick="toggleConcedeConfirmation()" id="loople-concede-button">
+                            <img src="svg/ui/concede.svg" alt="Concede" class="jukebox-prev-text">
+                            Concede
+                        </div>
+                        <div class="loople-endless-next-button" onclick="window.location.reload();" id="loople-endless-next-button">
+                            <img src="svg/ui/next.svg" alt="Concede" class="jukebox-prev-text">
+                            Get new random song
+                        </div>
+                        <div id="loople-concede-overlay" class="loople-info-overlay" onclick="closeConcedeConfirmationIfOutside(event)">
+                            <div class="loople-info-content" id="loople-concede-content">
+                                <div class="go-right" style="margin-bottom: -40px;">
+                                    <img src="svg/ui/close.svg" class="close-btn" onclick="toggleConcedeConfirmation()"></img>
+                                </div>
+                                <p>Are you sure you want to reveal the song of the day?</p>
+                                <p>This action will end the game.</p>
+                                <div class="loople-concede-buttons">
+                                    <button class="loople-concede-button-yes" onclick="triggerConcede()">Yes, I want to get the answer</button>
+                                    <button class="loople-concede-button-no" onclick="toggleConcedeConfirmation()">No, I want to keep playing</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="loople-guess">
+                    <input type="text" id="loople-song-guess" class="loople-song-guess" placeholder="Type a song name..." autocomplete="off">
+                    <div id="loople-suggestions" class="autocomplete-list"></div>
+                </div>
+                <div class="loople-guessed" id="loople-guessed">
+                </div>
+                <div id="loople-overlay-win" class="loople-overlay-win" hidden onclick="closeLoopleOverlayWinIfOutside(event)">
+                    <div class="loople-overlay-content-win" id="loople-overlay-content-win">
+                        <div class="go-right" style="margin-bottom: -25px;">
+                            <img src="svg/ui/close.svg" class="close-btn" onclick="closeLoopleOverlayWin()" hidden></img>
+                        </div>
+                        <div id="loople-overlay-info-win" class="loople-overlay-info-win"></div>
+                        <div id="loople-overlay-video-win" class="loople-overlay-video-win"></div>
+                        <div id="loople-overlay-controls-win" class="loople-overlay-controls-win"></div>
+                    </div>
+                </div>
+                <div id="loople-stats-overlay" class="loople-stats-overlay" onclick="closeLoopleStatsOverlayIfOutside(event)" hidden>
+                    <div class="loople-stats-overlay-content" id="loople-stats-overlay-content">
+                        <div class="go-right" style="margin-bottom: -50px;">
+                            <img src="svg/ui/close.svg" class="close-btn" onclick="toggleStats()"></img>
+                        </div>
+                        <h2>Statistics</h2>
+                        <div class="loople-stats-overlay-text" id="loople-stats-overlay-text">
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+    <div id="album-overlay" class="album-overlay" onclick="hideAlbumOverlay()">
+        <div id="album-overlay-content" class="album-overlay-content" onclick="event.stopPropagation()">
+            <!-- Filled by js -->
+        </div>
+    </div>
+    <hr>
+    <p class="bot"><bot class="info"><a href="https://www.justloopingaround.com/about" class="bot-link">JustLoopingAround</a><a href="https://www.justloopingaround.com/about" class="bot-link-no-underline"> ⓘ</a></bot> | <bot class="info"><a href="https://www.justloopingaround.com/about#contact" class="bot-link">Contact</a><a href="https://www.justloopingaround.com/about#contact" class="bot-link-no-underline"> ✉</a></bot> | <bot class="info"><a href="https://www.justloopingaround.com/about#support" class="bot-link">Support</a><a href="https://www.justloopingaround.com/about#support" class="bot-link-no-underline"> ♡</a></bot></p>
+</html>

@@ -176,7 +176,7 @@ contact.contact {
     position: absolute;
     width: 3rem;
     box-shadow: 0 8px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
     background-color: #313338;
     border-radius: 8px;
     padding: 10px;
@@ -187,13 +187,14 @@ contact.contact {
 .menu-icon:hover {
     transform: translateY(-2px); /* Added hover effect */
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+    z-index: 1000; /* Ensure it appears above other elements */
 }
 
 .menu-icon.sticky {
     position: fixed;
     top: 0px;
     right: var(--right); /* dynamic */
-    z-index: 500;
+    z-index: 1000;
 }
 
 .menu-img {
@@ -252,6 +253,7 @@ button .menu-img-stats {
     background-color: #35373C;
     box-sizing: border-box; /* Ensures padding is included in width */
     margin: 0; /* Reset margin */
+    z-index: 1000; /* Ensure it appears above other elements */
 }
 
 .dropdown-menu button:hover {
@@ -667,7 +669,7 @@ button .menu-img-stats {
 
 
 .jukebox-prev, .jukebox-next {
-    min-width: 80px; /* Adjust width as needed */
+    min-width: 80px;
     min-height: 80px;
     border-radius: 8px;
     display: none;
@@ -890,6 +892,7 @@ button .menu-img-stats {
     min-width: 280px; /* Minimum width for the dropdown */
     padding-right: 10px; /* Add padding for better spacing */
     font-size: 1.1rem; /* Adjust size as needed */
+    z-index: 1001; /* Ensure it appears above other elements */
 }
 
 .dropdown-content label {
@@ -902,6 +905,7 @@ button .menu-img-stats {
     min-width: 100%;
     text-align: left; /* Center the text */
     padding-left: 10px; /* Add padding for better spacing */
+    z-index: 1001; /* Ensure it appears above other elements */
 }
 
 .dropdown-content label:hover {
@@ -1072,6 +1076,652 @@ button .menu-img-stats {
 
 
 
+
+/* GAME */
+
+.loople-section {
+    text-align: left;
+    margin: 30px;
+}
+
+.loople-container {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.loople-youtube-iframe {
+    display: flex;
+    margin-top: 20px;
+    margin: 0% 15%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    min-width: 700px;
+    height: auto;
+    aspect-ratio: 16/9;
+}
+
+.loople-controls {
+    display: flex;
+    justify-content: space-evenly; /* even spacing including edges */
+    align-items: center;
+    margin-top: 20px;
+    background-color: #252526;
+    margin: 0% 15%;
+    padding-top: 20px;
+    padding-bottom: 12px;
+    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 100px;
+    min-width: 700px;
+}
+
+.loople-play-text, .loople-play-text-disabled {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 5px;
+}
+
+.loople-play-text {
+    color: #ffffff;
+}
+
+.loople-play-text-disabled {
+    color: #7c7c7c; /* Greyed out text for disabled state */
+}
+
+.loople-play, .loople-play-disabled {
+    min-width: 80px;
+    min-height: 80px;
+    border-radius: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+    background-color: #313338;
+    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.1);
+    position: relative; /* required for clip to stay inside */}
+
+.loople-play {
+    border: #ffffff 2px solid;
+}
+
+.loople-play-disabled {
+    border: #000 2px solid;
+    cursor: not-allowed; /* Change cursor to indicate inactivity */
+}
+
+.loople-play:active {
+    transform: translateY(3px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+
+.loople-clip{
+    width:80px;
+    height:80px;
+    overflow:hidden;
+    border-radius:100px;          /* nice rounded corners */
+    position:relative;
+    border: #ffffff 2px solid;
+}
+
+.loople-clip iframe{
+    position:absolute;
+    /* Make the iframe 200 % of the square so we can zoom into its centre */
+    width: 400%;
+    height: 400%;
+    top:-150%;
+    left:-150%;
+    border:0;
+    transform-origin:center;
+    pointer-events:auto; /* IMPORTANT: clicks go through to YouTube */
+}
+
+
+
+
+.loople-guess {
+    display: grid;
+    place-items: center;
+    padding-top: 5px;
+    position: relative;
+}
+
+
+.loople-song-guess {
+    width: 65%;
+    height: 60px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    padding: 0 20px;
+    border-top: 2px solid #1E1E1E;
+    font-size: 1.2rem;
+    min-width: 650px;
+}
+
+.autocomplete-list {
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    /* keep your other styles */
+    /* padding: 0 20px; */
+    /* border: 1px solid #ccc; */
+    max-height: 173px;
+    overflow-y: auto;
+    background-color: #252526;
+    border-radius: 5px;
+    z-index: 1000;
+    min-width: 650px;
+}
+
+.autocomplete-item {
+    padding: 10px 20px;
+    cursor: pointer;
+    border-bottom: #6d6d6d 2px solid;
+}
+
+.autocomplete-item:hover {
+    background-color: #1E1E1E;
+}
+
+.autocomplete-album-name {
+    font-size: 0.8rem;
+    color: #ccc;
+}
+
+.autocomplete-song-name {
+    font-size: 1.1rem;
+    color: #ffffff;
+}
+
+.loople-guessed {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 150px;
+}
+
+.loople-guessed-info {
+    display: flex;
+    flex-direction: column;
+    border: #000;
+}
+
+
+
+.loople-song-box, .loople-song-box-win {
+    width: 70%;
+    margin: 1rem auto;
+    background-color: #252526;
+    border-radius: 10px;
+    font-size: 1rem;
+    color: #ffffff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    overflow: hidden;
+    cursor: pointer;
+    min-width: 700px;
+}
+
+.loople-song-box-win {
+    width: 100%;
+}
+
+.loople-song-header, .loople-song-header-win, .loople-song-header-concede, .loople-song-header-overlay, .loople-song-header-skip {
+    padding: 0.7rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #ffffff;
+    border-bottom: #1e1e1e6a 1px solid;
+}
+
+.loople-song-header {
+    background-color: #8B0000;
+    color: #ddd;
+}
+
+.loople-song-header-win {
+    background-color: #71ff52;
+    color: #000000;
+}
+
+.loople-song-header-concede {
+    background-color: #FFCC00;
+    color: #ffffff;
+}
+
+.loople-song-header-skip {
+    background-color: #252526;
+    color: #000000;
+}
+
+.loople-song-header-overlay {
+    background-color: #FFCC00;
+    color: #ffffff;
+}
+
+.loople-song-name, .loople-song-name-win {
+    text-align: left;
+    word-break: break-word;
+}
+
+.loople-song-name {
+    color: #ffffff
+}
+.loople-song-name-win {
+    color: #000000;
+    font-weight: bold;
+}
+
+.guess-number, .guess-number-win {
+    text-align: right;
+    font-size: 0.95rem;
+}
+
+.guess-number {
+    color: #bdbdbd;
+}
+
+.guess-number-win {
+    color: #000000;
+}
+
+.guess-number-overlay {
+    color: #2d2d2d;
+    font-size: 0.8rem;
+    padding-left: 1rem;;
+}
+
+.loople-song-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    padding: 1rem 1.5rem 0.5rem;
+}
+
+.loople-song-details-grid {
+    display: grid;
+    gap: 0.6rem 1.5rem;
+    padding: 1rem 1.5rem;
+}
+
+.loople-song-line-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 3fr) minmax(0, 1fr);
+    align-items: start;
+    gap: 1.5rem;
+    word-break: break-word;
+}
+
+
+.loople-song-line-grid.full-width {
+    grid-template-columns: 1fr;
+}
+
+.loople-song-detail {
+    display: inline-flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    vertical-align: top; /* keep inline alignment clean */
+    /* background-color: #1E1E1E;
+    border-radius: 15px;
+    padding: 10px; */
+}
+
+.loople-song-detail-text {
+    display: inline; /* default */
+    white-space: normal;
+    word-break: break-word;
+    overflow-wrap: break-word;
+}
+
+
+.loople-song-detail-icon, .loople-song-detail-icon-text {
+    width: 1rem;
+    height: 1rem;
+    filter: invert(0.4);
+}
+
+.loople-song-detail-icon-text {
+    border: 1px solid #fff;
+    border-radius: 100%;
+    padding: 5px;
+    transform: translateY(7px);
+}
+
+.loople-stream-title {
+    grid-column: span 2;
+}
+
+.loople-album-info-separator {
+    border-top: 2px solid #444;
+    margin: 5px;
+}
+
+span.orange-text {
+    color: #FF7F00; /* Orange color for emphasis */
+    font-size: 0.7rem;
+}
+
+span.green-text {
+    color: #82ff66; /* Green color for emphasis */
+    white-space: normal;
+}
+
+span.bold {
+    font-weight: bold;
+}
+
+@keyframes fadeSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeSlideIn 0.4s ease-out;
+}
+
+@keyframes appears {
+    from {
+        opacity: 0.5;
+        transform: translateY(1px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.appears {
+    animation: appears 0.4s ease-out;
+}
+
+
+
+
+.loople-controls-bottom {
+    margin: 0% 15%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* space between left and right sides */
+    margin-top: 30px;
+    margin-bottom: 15px;
+    min-width: 700px;
+}
+
+.loople-controls-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.loople-controls-label {
+    font-size: 1.3rem;
+    color: #ffffff;
+}
+
+.loople-info-button-small, .loople-info-button-big {
+    display: flex;
+    justify-content: left;
+    gap: 3px;
+    align-items: center;
+    /* width: 100px; */
+    padding-left: 5px;
+    height: 32px;
+    border-radius: 20px;
+    background-color: #313338;
+    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transfrgb(124, 124, 124)s, box-shadow 0.3s;
+}
+
+.loople-info-button-small:hover, .loople-info-button-big:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+    transform: translateY(-1px); /* Added hover effect */
+}
+
+.loople-info-button-small:active, .loople-info-button-big:active {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Reduced shadow on click */
+    transform: translateY(0px); /* Reset hover effect */
+}
+
+.loople-info-button-small {
+    width: 70px;
+}
+
+.loople-info-button-big {
+    width: 105px;
+}
+
+.loople-info-button-gamemode-daily, .loople-info-button-gamemode-endless {
+    width: 130px;
+    gap: 8px;
+    padding-left: 10px;
+    padding-right: 4px;
+    font-size: 1.05rem;
+    margin-bottom: 15px;
+    display: none;
+    justify-content: left;
+    align-items: center;
+    height: 32px;
+    border-radius: 20px;
+    background-color: #313338;
+    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transfrgb(124, 124, 124)s, box-shadow 0.3s;
+}
+
+.loople-info-button-gamemode-endless {
+    width: 150px; /* Wider button for Endless mode */
+}
+
+.loople-info-button-gamemode-daily:hover, .loople-info-button-gamemode-endless:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+    transform: translateY(-2px); /* Added hover effect */
+}
+
+.loople-info-button-gamemode-daily:active, .loople-info-button-gamemode-endless:active {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Reduced shadow on click */
+    transform: translateY(0px); /* Reset hover effect */
+}
+
+.loople-endless-next-button {
+    width: 205px;
+    gap: 5px;
+    padding-left: 10px;
+    padding-right: 4px;
+    display: none;
+    justify-content: left;
+    align-items: center;
+    height: 32px;
+    border-radius: 20px;
+    background-color: #313338;
+    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transfrgb(124, 124, 124)s, box-shadow 0.3s;
+}
+
+.loople-endless-next-button:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+    transform: translateY(-2px); /* Added hover effect */
+}
+.loople-endless-next-button:active {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Reduced shadow on click */
+    transform: translateY(0px); /* Reset hover effect */
+}
+
+
+.loople-info-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(10, 10, 10, 0.85);
+    color: white;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.loople-info-content {
+    max-width: 80%;
+    max-height: 80%;
+    background-color: #1e1e1e;
+    padding: 2rem;
+    border-radius: 10px;
+    font-size: 1rem;
+    line-height: 1.6;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    overflow-y: auto; /* Enable vertical scrolling */
+}
+
+
+.loople-song-detail-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 12px;
+    align-items: center;
+    /* justify-content: center; */
+    margin-top: 0.5em;
+}
+
+.loople-song-detail-info {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    background-color: #252526;
+    border-radius: 6px;
+    padding: 4px 8px;
+    font-size: 0.95em;
+    white-space: nowrap;
+}
+
+.loople-info-noshow {
+    display: flex;
+    align-items: center;
+    background-color: #313338;
+    border-radius: 6px;
+    padding: 4px 8px;
+    font-size: 0.95em;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+.loople-info-noshow img {
+    margin-right: 4px;
+}
+
+
+.loople-concede-buttons {
+    display: flex;
+    flex-wrap: nowrap;         /* Force buttons to stay on the same line */
+    justify-content: center;   /* Or space-between / flex-end as you like */
+    gap: 1rem;
+    min-width: 0;              /* Allow flex children to shrink properly */
+  }
+
+
+.loople-concede-button-yes, .loople-concede-button-no {
+    color: #ffffff; /* White text color */
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1rem;;
+    cursor: pointer;
+    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.1); /* Added box shadow */
+    transition: transform 0.3s, box-shadow 0.3s; /* Added transition for hover effect */
+}
+
+.loople-concede-button-yes {
+    background-color: #8B0000; /* Red background for "Yes" button */
+}
+
+.loople-concede-button-no {
+    background-color: #313338; /* Grey background for "No" button */
+}
+
+
+
+/* full‑screen dimmed layer */
+.loople-overlay-win, .loople-stats-overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.75);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    z-index:2000;
+  }
+
+.loople-overlay-win[hidden]{ display:none !important; }
+.loople-stats-overlay[hidden]{ display:none !important; }
+
+.loople-overlay-content-win, .loople-stats-overlay-content{
+    background:#121212;
+    color:#fff;
+    padding:1.2rem;
+    border-radius:12px;
+    max-width:80%;
+    max-height: 80%;
+    box-shadow:0 0 25px rgba(0,0,0,.6);
+    position:relative;
+    overflow-y:auto; /* allow scrolling if content is too tall */
+}
+
+.loople-overlay-video-win{
+    position:relative;
+    width:100%;
+    aspect-ratio:16/9;
+    border-radius:8px;
+    overflow:hidden;
+}
+.loople-overlay-video-win iframe{
+    position:absolute; inset:0; width:100%; height:100%;
+    border:0;
+}
+
+.loople-overlay-controls-win{
+    margin-top:1rem;
+    display:flex; flex-wrap:wrap; gap:12px;
+    justify-content:center;
+}
+
+
+.loople-stats-item {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.5em;
+    padding: 4px 0;
+}
+
+.loople-stats-item span:first-child {
+    text-align: left;
+    font-weight: 500;
+}
+
+.loople-stats-item span:last-child {
+    text-align: left;
+    font-variant-numeric: tabular-nums; /* for aligned numbers */
+}
+
+
+
+
+
 /* CHANGELOG */
 .changelog {
     display: grid;
@@ -1177,6 +1827,66 @@ figcaption {
     .close-btn {
         width: 60px;
         height: 60px;
+    }
+
+    .loople-controls {
+        margin: 0;
+    }
+
+    .loople-controls-bottom, .loople-youtube-iframe {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .loople-info-button-small, .loople-info-button-big, .loople-endless-next-button, .loople-info-button-gamemode-daily, .loople-info-button-gamemode-endless {
+        height: 45px;
+    }
+    .loople-info-button-small {
+        width: 100px;
+    }
+    .loople-info-button-big {
+        width: 150px;
+    }
+    .loople-info-button-gamemode-endless {
+        width: 217px;
+    }
+    .loople-info-button-gamemode-daily {
+        width: 180px;
+    }
+    .loople-endless-next-button {
+        width: 295px;
+    }
+
+    .loople-controls-label {
+        font-size: 1.4rem;
+        color: #ffffff;
+    }
+
+    .loople-concede-button-yes, .loople-concede-button-no {
+        font-size: 1rem;
+    }
+
+    .loople-play, .loople-play-disabled {
+        min-width: 100px;
+        min-height: 100px;
+    }
+
+    .loople-song-box, .loople-youtube-iframe {
+        width: 100%;
+    }
+
+    .loople-song-guess {
+        width: 95%;
+        font-size: 1.5rem;
+    }
+
+    .loople-guessed {
+        margin-bottom: 350px; /* Adjusted for smaller screens */
+    }
+
+    .autocomplete-list {
+        width: 100%; /* Match the width of the input */
+        max-height: 307px; /* Adjusted height for smaller screens */
     }
 }
 

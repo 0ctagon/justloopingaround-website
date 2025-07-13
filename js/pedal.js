@@ -117,7 +117,8 @@ if (tierlist) {
                 { id: "s180921", name: "Diarrhea", overlayName: "Diarrhea" },
                 { id: "s180429", name: "Gibberish", overlayName: "Gibberish" },
                 { id: "s180415", name: "Stoned", overlayName: "Stoned" },
-                { id: "s200517", name: "Classified", overlayName: "Classified" }
+                { id: "s200517", name: "Classified", overlayName: "Classified" },
+                { id: "s210808", name: "Fuck Billionairs", overlayName: "- Fuck Billionairs" },
             ]
         },
         {
@@ -130,7 +131,8 @@ if (tierlist) {
             title: hofTitles[4],
             songs: [
                 { id: "s190825", name: "Mushroom trip", overlayName: "Mushroom trip" },
-                { id: "s200421t", name: "Fall in love", overlayName: "Fall in love", time: "0h20m26s" }
+                { id: "s200421t", name: "Fall in love", overlayName: "Fall in love", time: "0h20m26s" },
+                { id: "s230717", name: "Jim and the Desperado", overlayName: "Jim and the Desperado" }
             ]
         },
         {
@@ -167,7 +169,8 @@ if (tierlist) {
                 { id: "s210606", name: "Connection", overlayName: "Connection" },
                 { id: "s210411", name: "Keep working & flying", overlayName: "- Keep working & flying" },
                 { id: "s200321", name: "Love", overlayName: "Love" },
-                { id: "s180715l", name: "Girl's club", overlayName: "Girl's club" }
+                { id: "s180715l", name: "Girl's club", overlayName: "Girl's club" },
+                { id: "s241011", name: "After the storm", overlayName: "After the storm" },
             ]
         },
         {

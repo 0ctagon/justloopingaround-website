@@ -5,7 +5,7 @@ The repository contains the code for my [Marc Rebillet Livestream website](https
 Files details:
 
 - `css/robe.css` (like the beautiful robes worn each streams) contains the CSS styles.
-- `js/looper.js` (like the RC-505 which manages everything) contains the main logic to render the streams data, the hall of fame, the jukebox and the song explorer.
+- `js/looper.js` (like the RC-505 which manages everything) contains the main logic to render the streams data, the hall of fame, the jukebox, the song explorer and the game.
 - `js/pedal.js` (like the sustain pedal to add texture) handles the translation of some elements.
 - `js/menu.js` manages the toggled menu.
 - `js/stats.js` manages the stats figures display.

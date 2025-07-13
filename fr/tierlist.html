@@ -30,45 +30,49 @@
         </div>
         <div id="menuAnchor">
             <div class="menu-icon" onclick="toggleMenu()">
-                <img src="./../svg/menu.svg" alt="Menu Icon" class="menu-img"></img>
+                <img src="./../svg/menu/menu.svg" alt="Menu Icon" class="menu-img"></img>
                 <span class="menu-text">MENU</span>
                 <div class="dropdown-menu" id="dropdownMenu">
                     <button onclick="scrollToSection('halloffame')">
-                        <img src="../svg/go.svg" alt="Hall of Fame" class="menu-img">
+                        <img src="../svg/menu/go.svg" alt="Hall of Fame" class="menu-img">
                         Hall of Fame
                     </button>
                     <button onclick="scrollToSection('jukebox')">
-                        <img src="../svg/go.svg" alt="Jukebox" class="menu-img">
+                        <img src="../svg/menu/go.svg" alt="Jukebox" class="menu-img">
                         Jukebox
                     </button>
                     <button onclick="scrollToSection('songsearcher')">
-                        <img src="../svg/go.svg" alt="Song Explorer" class="menu-img">
+                        <img src="../svg/menu/go.svg" alt="Song Explorer" class="menu-img">
                         Song Explorer
                     </button>
                     <button onclick="scrollToSection('allsongs')">
-                        <img src="../svg/go.svg" alt="Streams liste" class="menu-img">
+                        <img src="../svg/menu/go.svg" alt="Streams liste" class="menu-img">
                         Liste des Streams
                     </button>
                     <div class="dropdown-divider"></div>
                     <button onclick="window.location.href = '.'">
-                        <img src="../svg/notierlist.svg" alt="repertoire" class="menu-img">
-                        Vers Repertoire
+                        <img src="../svg/menu/notierlist.svg" alt="repertoire" class="menu-img">
+                        Repertoire
+                    </button>
+                    <button onclick="window.location.href = '../game'">
+                        <img src="../svg/ui/game.svg" alt="Game" class="menu-img">
+                        Jeu
                     </button>
                     <button onclick="window.location.href='about'">
-                        <img src="../svg/about.svg" alt="about page" class="menu-img">
+                        <img src="../svg/menu/about.svg" alt="about page" class="menu-img">
                         À propos
                     </button>
                     <div class="dropdown-divider"></div>
                     <button onclick="window.location.href = '../'">
-                        <img src="../svg/EN.svg" alt="english website" class="menu-img">
+                        <img src="../svg/menu/EN.svg" alt="english website" class="menu-img">
                         EN
                     </button>
                     <button onclick="window.location.href='../statistics'">
-                        <img src="../svg/stats.svg" alt="statistic page" class="menu-img">
+                        <img src="../svg/menu/stats.svg" alt="statistic page" class="menu-img">
                         Statistics
                     </button>
                     <button onclick="window.location.href='../changelog'">
-                        <img src="../svg/changelog.svg" alt="changelog page" class="menu-img">
+                        <img src="../svg/menu/changelog.svg" alt="changelog page" class="menu-img">
                         Changelog
                     </button>
                 </div>
@@ -123,15 +127,15 @@
             <p>Ce jukebox vous propose des chansons aléatoires parmis toutes les chansons que Marc a stream depuis ses début sur Youtube. Vous pouvez parametrer les chansons que le jukebox propose en cliquant sur l'icone de parametre. Une fois la chanson choisie, vous pouvez aussi cliquer sur le nom du live pour afficher les autres chansons du live. Il y a actuellement <span id="jukebox-nsongs">[CHARGEMENT]</span> differentes chansons possibles dans le Jukebox !</p>
             <div class="jukebox-wrapper">
                 <div class="jukebox-prev" id="jukebox-prev" onclick="getPrevSong()">
-                    <img src="./../svg/prev.svg" alt="Settings" class="jukebox-prev-text"></img>
+                    <img src="./../svg/ui/prev.svg" alt="Settings" class="jukebox-prev-text"></img>
                 </div>
                 <div class="jukebox-song" id="jukebox-song">
                     <img src="./../img/jukebox.jpg" alt="Jukebox" id="jukebox-img" class="jukebox-img" onclick="getNextSong()">
-                    <img src="./../svg/play.svg" alt="Play!!!" id="jukebox-play-button" class="jukebox-play-button" onclick="getNextSong()">
+                    <img src="./../svg/ui/play.svg" alt="Play!!!" id="jukebox-play-button" class="jukebox-play-button" onclick="getNextSong()">
                     <div class="jukebox-embed-container" id="jukebox-embed-container"></div>
                     <div class="jukebox-song-header">
                         <div class="jukebox-song-title">Cliquez pour obtenir une chanson aléatoire !</div>
-                        <img src="./../svg/settings.svg" alt="Settings" class="settings-button" onclick="showJukeboxOverlay()"></img>
+                        <img src="./../svg/ui/settings.svg" alt="Settings" class="settings-button" onclick="showJukeboxOverlay()"></img>
                     </div>
                     <div class="jukebox-song-details" id="jukebox-song-details">
                         <div class="song-detail">
@@ -164,7 +168,7 @@
                 <div id="jukebox-overlay" class="jukebox-overlay" onclick="hideJokeboxOverlay()">
                     <div class="jukebox-param" onclick="event.stopPropagation()">
                         <div class="go-right">
-                            <img src="./../svg/close.svg" id="close-btn-jukebox" class="close-btn" onclick="buttonHideOverlay('jukebox')" hidden></img>
+                            <img src="./../svg/ui/close.svg" id="close-btn-jukebox" class="close-btn" onclick="buttonHideOverlay('jukebox')" hidden></img>
                         </div>
                         <div class="jukebox-param-title">Parametre du Jukebox</div>
                         <div class="jukebox-param-text">
@@ -241,7 +245,7 @@
                     </div>
                 </div>
                 <div class="jukebox-next" id="jukebox-next" onclick="getNextSong()">
-                    <img src="./../svg/next.svg" alt="Settings" class="jukebox-prev-text"></img>
+                    <img src="./../svg/ui/next.svg" alt="Settings" class="jukebox-prev-text"></img>
                 </div>
             </div>
         </div>
@@ -249,7 +253,7 @@
     <div class="section" id="songsearcher">
         <h2>Chansons explorer</h2>
         <div class="paragraphe">
-            <p>Cet outil vous permet de rechercher des chansons à l'aide de mots-clés. C'est l'outil parfait pour rechercher une chanson coincée dans votre tête, ou celle dont vous ne connaissez que le titre. Vous voulez savoir combien de chansons parlent de sexe ou combien ont été étiquetées « funk » ? Cet outil est également très utile pour cela (64 et 107 respectivement).</p>
+            <p>Cet outil vous permet de rechercher des chansons à l'aide de mots-clés. C'est l'outil parfait pour rechercher une chanson coincée dans votre tête, ou celle dont vous ne connaissez que le titre. Vous voulez savoir combien de chansons parlent de sexe ou combien ont été étiquetées « funk » ? Cet outil est également très utile pour cela (65 et 111 respectivement).</p>
         </div>
         <div class="database-item" onclick="showDatabaseOverlay()">
             <img src="./../img/datasearch.jpg" alt="Search Image">
@@ -260,10 +264,10 @@
         <div id="database-overlay" class="database-overlay" onclick="hideDatabaseOverlay()">
             <div id="database-overlay-content" class="database-overlay-content" onclick="event.stopPropagation()">
                 <div class="database-header-container">
-                    <img src="./../svg/close.svg" id="close-btn-database" class="close-btn" onclick="buttonHideOverlay('database')" hidden></img>
+                    <img src="./../svg/ui/close.svg" id="close-btn-database" class="close-btn" onclick="buttonHideOverlay('database')" hidden></img>
                     <div class="database-header">
                         <input type="text" id="searchBar" placeholder="Rechercher une chanson...">
-                        <img src="./../svg/send.svg" alt="Icon" id="search-icon" onclick="handleSearch(searchBar.value)">
+                        <img src="./../svg/ui/send.svg" alt="Icon" id="search-icon" onclick="handleSearch(searchBar.value)">
                     </div>
                     <span id="searchCount"></span>
                 </div>
